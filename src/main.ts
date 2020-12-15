@@ -31,6 +31,7 @@ async function run(): Promise<void> {
       status: 'completed',
       conclusion: 'failure',
       output: {
+        title: 'title',
         summary: 'summary',
         annotations: [
           {
@@ -38,8 +39,7 @@ async function run(): Promise<void> {
             start_line: 0,
             end_line: 0,
             annotation_level: 'failure',
-            message: 'message',
-            title: 'title'
+            message: 'message'
           }
         ]
       }
