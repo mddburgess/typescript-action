@@ -31,17 +31,19 @@ async function run(): Promise<void> {
       status: 'completed',
       conclusion: 'failure',
       output: {
-        title: '',
+        title: 'title',
         summary: 'summary',
         text: 'text details',
         annotations: [
           {
             path: 'src/main.ts',
-            start_line: 0,
-            end_line: 0,
+            start_line: 1,
+            end_line: 1,
+            start_column: 1,
+            end_column: 4,
             annotation_level: 'failure',
-            message: '',
-            title: 'title'
+            message: 'message',
+            title: 'annotation title'
           }
         ]
       }
