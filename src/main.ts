@@ -38,7 +38,8 @@ async function run(): Promise<void> {
             start_line: 0,
             end_line: 0,
             annotation_level: 'failure',
-            message: 'message'
+            message: 'message',
+            title: 'title'
           }
         ]
       }
