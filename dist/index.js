@@ -60,8 +60,8 @@ function run() {
                     annotations: [
                         {
                             path: 'src/main.ts',
-                            start_line: 1,
-                            end_line: 1,
+                            start_line: 40,
+                            end_line: 40,
                             start_column: 1,
                             end_column: 4,
                             annotation_level: 'failure',
