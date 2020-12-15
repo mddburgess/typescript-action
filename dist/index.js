@@ -54,8 +54,9 @@ function run() {
             core.setOutput('time', new Date().toTimeString());
             core.debug('Updating check run');
             const response = yield octokit.checks.update(Object.assign(Object.assign({}, github.context.repo), { check_run_id: check.data.id, status: 'completed', conclusion: 'failure', output: {
-                    title: 'title',
+                    title: '',
                     summary: 'summary',
+                    text: 'text details',
                     annotations: [
                         {
                             path: 'src/main.ts',
