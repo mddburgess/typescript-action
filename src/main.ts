@@ -29,7 +29,19 @@ async function run(): Promise<void> {
       ...github.context.repo,
       check_run_id: check.data.id,
       status: 'completed',
-      conclusion: 'success'
+      conclusion: 'failure',
+      output: {
+        summary: 'summary',
+        annotations: [
+          {
+            path: 'src/main.ts',
+            start_line: 0,
+            end_line: 0,
+            annotation_level: 'failure',
+            message: 'message'
+          }
+        ]
+      }
     })
   } catch (error) {
     core.setFailed(error.message)
