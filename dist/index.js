@@ -53,7 +53,19 @@ function run() {
             core.debug(new Date().toTimeString());
             core.setOutput('time', new Date().toTimeString());
             core.debug('Updating check run');
-            yield octokit.checks.update(Object.assign(Object.assign({}, github.context.repo), { check_run_id: check.data.id, status: 'completed', conclusion: 'success' }));
+            const response = yield octokit.checks.update(Object.assign(Object.assign({}, github.context.repo), { check_run_id: check.data.id, status: 'completed', conclusion: 'failure', output: {
+                    summary: 'summary',
+                    annotations: [
+                        {
+                            path: 'src/main.ts',
+                            start_line: 0,
+                            end_line: 0,
+                            annotation_level: 'failure',
+                            message: 'message'
+                        }
+                    ]
+                } }));
+            core.debug(JSON.stringify(response.data, undefined, 2));
         }
         catch (error) {
             core.setFailed(error.message);
