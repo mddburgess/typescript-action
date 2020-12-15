@@ -25,7 +25,7 @@ async function run(): Promise<void> {
     core.setOutput('time', new Date().toTimeString())
 
     core.debug('Updating check run')
-    await octokit.checks.update({
+    const response = await octokit.checks.update({
       ...github.context.repo,
       check_run_id: check.data.id,
       status: 'completed',
@@ -43,6 +43,7 @@ async function run(): Promise<void> {
         ]
       }
     })
+    core.debug(JSON.stringify(response.data, undefined, 2))
   } catch (error) {
     core.setFailed(error.message)
   }
