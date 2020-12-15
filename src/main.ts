@@ -36,7 +36,7 @@ async function run(): Promise<void> {
         text: 'text details',
         annotations: [
           {
-            path: '',
+            path: 'fakepath',
             start_line: 40,
             end_line: 40,
             start_column: 1,
