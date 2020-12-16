@@ -55,7 +55,12 @@ function run() {
             core.debug('Updating check run');
             const response = yield octokit.checks.update(Object.assign(Object.assign({}, github.context.repo), { check_run_id: check.data.id, status: 'completed', conclusion: 'failure', output: {
                     title: 'title',
-                    summary: 'summary',
+                    summary: `| Tests Run | 12 |
+        | :--- | ---: |
+        | Passed | 6 |
+        | Failures | 3 |
+        | Errors | 2 |
+        | Skipped | 1 |`,
                     text: 'text details',
                     annotations: [
                         {
