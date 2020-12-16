@@ -57,19 +57,15 @@ async function run(): Promise<void> {
     core.error('error message')
     core.endGroup()
 
-    core.startGroup('outer group')
-    core.info('outer group message 1')
-    core.info('outer group message 2')
-    core.startGroup('inner group')
-    core.info('inner group message 1')
-    core.info('inner group message 2')
-    core.endGroup()
-    core.info('outer group message 3')
-    core.info('outer group message 4')
-    core.endGroup()
+    await core.group('start function', groupFn)
   } catch (error) {
     core.setFailed(error.message)
   }
+}
+
+async function groupFn(): Promise<void> {
+  core.info('groupFn message 1')
+  core.info('groupFn message 2')
 }
 
 run()
