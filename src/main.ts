@@ -33,11 +33,11 @@ async function run(): Promise<void> {
       output: {
         title: 'title',
         summary: `| Tests Run | 12 |
-        | :--- | ---: |
-        | Passed | 6 |
-        | Failures | 3 |
-        | Errors | 2 |
-        | Skipped | 1 |`,
+| :--- | ---: |
+| Passed | 6 |
+| Failures | 3 |
+| Errors | 2 |
+| Skipped | 1 |`,
         text: 'text details',
         annotations: [
           {
