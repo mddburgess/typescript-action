@@ -71,6 +71,22 @@ function run() {
                     ]
                 } }));
             core.debug(JSON.stringify(response.data, undefined, 2));
+            core.startGroup('start group');
+            core.debug('debug message');
+            core.info('info message');
+            core.warning('warning message');
+            core.error('error message');
+            core.endGroup();
+            core.startGroup('outer group');
+            core.info('outer group message 1');
+            core.info('outer group message 2');
+            core.startGroup('inner group');
+            core.info('inner group message 1');
+            core.info('inner group message 2');
+            core.endGroup();
+            core.info('outer group message 3');
+            core.info('outer group message 4');
+            core.endGroup();
         }
         catch (error) {
             core.setFailed(error.message);
