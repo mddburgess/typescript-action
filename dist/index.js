@@ -42,7 +42,7 @@ const wait_1 = __webpack_require__(817);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const requiredInput = core.getInput('required-input');
+            const requiredInput = core.getInput('required-input', { required: true });
             core.info(requiredInput);
             const token = core.getInput('github-token');
             const octokit = github.getOctokit(token);

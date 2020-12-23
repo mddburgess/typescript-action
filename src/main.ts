@@ -4,7 +4,7 @@ import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
-    const requiredInput = core.getInput('required-input')
+    const requiredInput = core.getInput('required-input', {required: true})
     core.info(requiredInput)
     const token = core.getInput('github-token')
     const octokit = github.getOctokit(token)
