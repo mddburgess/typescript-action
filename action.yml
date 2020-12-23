@@ -10,6 +10,9 @@ inputs:
     required: true
     description: 'github token'
     default: ${{ github.token }}
+  required-input:
+    required: true
+    description: ''
 runs:
   using: 'node12'
   main: 'dist/index.js'
