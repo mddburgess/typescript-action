@@ -13,7 +13,7 @@ inputs:
   required-input:
     required: true
     description: ''
-    default: 'default value'
+    default: ''
 runs:
   using: 'node12'
   main: 'dist/index.js'
